@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.mapper.first.FirstDataSourceMapper">
+    <insert id="insertFirstUser" parameterType="com.example.demo.entity.CommodityVo">
+        INSERT INTO
+          t_commodity(userName,passWord)
+        VALUES (
+          #{userName, jdbcType=VARCHAR},
+          #{passWord,jdbcType=VARCHAR}
+        )
+    </insert>
+
+    <select id="findFirstData" resultType="com.example.demo.entity.CommodityVo">
+        SELECT
+        userName as userName,
+        passWord as password
+        from
+        t_commodity
+    </select>
+</mapper>
